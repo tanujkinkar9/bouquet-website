@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Handmade Flower Bouquets</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav class="top-nav">
+  <div class="logo-section">
+    <img src="images/logo.png" alt="Logo" class="logo" />
+    <h1 class="site-title">Bloom Bouquets</h1>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#bouquets">Bouquets</a></li>
+    <li><a href="#contact">Contact</a></li>
+  
+
+  </ul>
+
+  <div class="hamburger">&#9776;</div> <!-- ☰ menu icon -->
+</nav>
+
+
+  <!-- Hero Banner -->
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Bloom with Love</h1>
+      <p>Elegant Handmade Flower Bouquets</p>
+      <a href="#bouquets" class="btn">Explore Bouquets</a>
+    </div>
+  </header>
+
+  <!-- Intro -->
+  <section class="intro">
+    <h2>🌸 Why Choose Us?</h2>
+    <p>Each bouquet is crafted with fresh flowers and love, designed for your special moments.</p>
+  </section>
+
+  <!-- Bouquets Section -->
+  <section class="featured" id="bouquets">
+    <h2>💐 Our Bouquets</h2>
+    <div class="bouquet-flex">
+    <div class="bouquet-card">
+  <img src="images/BN3.jpeg" alt="Rose Garden" />
+  <h3>Rose Garden</h3>
+  <p>₹499</p>
+  <a
+    class="whatsapp-btn"
+    href="https://wa.me/91XXXXXXXXXX?text=Hi, I'm interested in the 'Rose Garden' bouquet!"
+    target="_blank"
+  >
+    Order on WhatsApp
+  </a>
+</div>
+
+
+    <div class="bouquet-card">
+  <img src="images/BN4.jpeg" alt="Rose Garden" />
+  <h3>Rose Garden</h3>
+  <p>₹499</p>
+  <a
+    class="whatsapp-btn"
+    href="https://wa.me/91XXXXXXXXXX?text=Hi, I'm interested in the 'Rose Garden' bouquet!"
+    target="_blank"
+  >
+    Order on WhatsApp
+  </a>
+</div>
+
+
+     <div class="bouquet-card">
+  <img src="images/BN5.jpeg" alt="Rose Garden" />
+  <h3>Rose Garden</h3>
+  <p>₹499</p>
+  <a
+    class="whatsapp-btn"
+    href="https://wa.me/91XXXXXXXXXX?text=Hi, I'm interested in the 'Rose Garden' bouquet!"
+    target="_blank"
+  >
+    Order on WhatsApp
+  </a>
+</div>
+<div class="bouquet-card">
+  <img src="images/BN6.jpeg" alt="Rose Garden" />
+  <h3>Rose Garden</h3>
+  <p>₹499</p>
+  <a
+    class="whatsapp-btn"
+    href="https://wa.me/91XXXXXXXXXX?text=Hi, I'm interested in the 'Rose Garden' bouquet!"
+    target="_blank"
+  >
+    Order on WhatsApp
+  </a>
+</div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025
+        </p>
+        </footer>
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('nav-active');
+  });
+</script>
+
+<!-- Contact Section -->
+<section class="contact-section" id="contact">
+  <h2>📬 Contact Us</h2>
+  <p>Have questions or want a custom bouquet? We'd love to hear from you!</p>
+<form class="contact-form" onsubmit="sendWhatsApp(); return false;">
+
+  <input type="text" id="name" placeholder="Your Name" required />
+<input type="tel" id="phone" placeholder="Your Phone Number" required pattern="[0-9]{10}" />
+<textarea id="message" placeholder="Your Message" required></textarea>
+<button type="submit">Send via WhatsApp</button>
+
+</form>
+
+</section>
+<!--js code----------->
+<script>
+  function sendWhatsApp() {
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const finalMsg = `Hi, my name is ${name}.\nPhone: ${phone}\nMessage: ${message}`;
+    const whatsappURL = `https://wa.me/919370897392?text=${encodeURIComponent(finalMsg)}`;
+
+    // Show Thank You popup
+    document.getElementById("thankYouPopup").style.display = "flex";
+
+    // Redirect to WhatsApp after 2 seconds
+    setTimeout(() => {
+      window.open(whatsappURL, '_blank');
+    }, 2000); // 2-second delay
+  }
+
+  function closePopup() {
+    document.getElementById("thankYouPopup").style.display = "none";
+  }
+</script>
+
+<!-- Thank You Popup -->
+<div class="thank-you-popup" id="thankYouPopup">
+  <div class="popup-content">
+    <h2>Thank You!</h2>
+    <p>We’ll get back to you soon.</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+</body>

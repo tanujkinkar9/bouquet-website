@@ -1,0 +1,351 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fff8f6;
+  color: #333;
+}
+/* Logo Navigation Bar */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(230, 111, 161, 0.2); /* light pink glass effect */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(233, 30, 99, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.site-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8rem;
+  color: #e91e63;
+  margin-left: 0.8rem;
+  
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #e91e63;
+  bottom: -4px;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+
+
+.hero {
+  height: 100vh;
+  background-image: url('../images/BN.jpeg'); /* You can replace this */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 182, 193, 0.3);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-family: 'Dancing Script', cursive;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin: 1rem 0;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.intro, .featured {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.intro h2, .featured h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #e91e63;
+}
+
+/* Flexbox Layout for 4 Cards */
+.bouquet-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+/* Card Styling */
+.bouquet-card {
+  flex: 1 1 calc(25% - 1rem);
+  max-width: calc(25% - 1rem);
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.bouquet-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+  border-bottom: 1px solid #eee;
+}
+
+.bouquet-card h3 {
+  margin: 0.5rem 0 0.2rem;
+  font-size: 1.1rem;
+  color: #e91e63;
+}
+
+.bouquet-card p {
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+}
+
+/* Hover Animation */
+.bouquet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(233, 30, 99, 0.5);
+  border: 2px solid #e91e63;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #ffccd5;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .bouquet-card {
+    flex: 1 1 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .bouquet-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: rgba(255, 240, 245, 0.9);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.nav-active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+.whatsapp-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #25D366;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background: #128C7E;
+}
+/* contact section*/
+.contact-section {
+  padding: 4rem 2rem;
+  background: #fffaf9;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  color: #e91e63;
+  margin-bottom: 0.5rem;
+}
+
+.contact-section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.contact-form button {
+  background: #e91e63;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background: #c2185b;
+}
+/* Thank You Popup */
+.thank-you-popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.popup-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content h2 {
+  margin-bottom: 1rem;
+  color: #e91e63;
+}
+
+.popup-content button {
+  background: #e91e63;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.popup-content button:hover {
+  background: #c2185b;
+}
